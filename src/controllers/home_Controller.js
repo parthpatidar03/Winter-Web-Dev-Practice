@@ -1,0 +1,53 @@
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import { createRequire } from 'module';
+import { getUserByName, getUserById } from "../services/user_service.js";
+
+
+const require = createRequire(import.meta.url);
+const users = require('../models/users.json');
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const router = express.Router();
+
+const index = async (req, res) => {
+  console.log("Home route accessed");
+  await res.send("Hello World!");
+};
+
+const about = async (req, res) => {
+  console.log("About route accessed");
+  res.render("about", { title: "About MEEEE" });
+};
+
+const home = async (req, res) => {
+  res.render("home", { title: "Home Page" });
+};
+
+const contact = async (req, res) => {
+  res.render("contact", { title: "Contact Page" });
+};
+
+const home1 = async (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "root.html"));
+};
+
+const user = async (req, res) => {
+  //console.log(req);
+  if (!req.params.user) {
+    res.render("home");
+  }
+
+    const userData = getUserByName(req.params.user);
+
+    if (userData) {
+      res.render("user", userData);
+    } 
+    
+};
+
+export { index, about, home, contact, home1, user };
