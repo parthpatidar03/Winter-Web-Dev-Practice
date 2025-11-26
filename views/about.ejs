@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1><%= title %></h1>
-    <p>Welcome to our About Us page.</p>
     <nav>
-        <a href="/">Home</a> |
-        <a href="/about">About Us</a> |
-        <a href="/contact">Contact Us</a>
+        <div class="container">
+            <a href="/" class="brand">Node App</a>
+            <div>
+                <a href="/">Home</a>
+                <a href="/users">Users</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
     </nav>
+    <div class="container">
+        <h1><%= title %></h1>
+        <p>Welcome to our About Us page. We are learning Node.js and Express.</p>
+    </div>
 </body>
 </html>

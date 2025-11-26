@@ -1,15 +1,36 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { promises } from 'fs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const logFilePath = path.join(__dirname, '..','logs', 'requests.log');
+// Define log file paths
+const logsDir = path.join(__dirname, '../../logs');
+const appLogPath = path.join(logsDir, 'app.log');
+const errorLogPath = path.join(logsDir, 'error.log');
 
-// Ensure the logs directory exists
-const write_to_file = (message) => {
-   const write_file = fs.writeFileSync(logFilePath, message + '\n', { flag: '' });
+// Ensure logs directory exists
+if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true });
 }
 
-export { write_to_file };
+const appendLog = (filePath, message) => {
+   try {
+      fs.appendFileSync(filePath, message + '\n');
+   } catch (err) {
+      console.error('Failed to write to log file:', err);
+   }
+};
+
+const logInfo = (message) => {
+    appendLog(appLogPath, `[INFO] ${message}`);
+};
+
+const logError = (message) => {
+    // Write to both error log and app log for completeness
+    appendLog(errorLogPath, `[ERROR] ${message}`);
+   //  appendLog(appLogPath, `[ERROR] ${message}`);
+};
+
+export { logInfo, logError };

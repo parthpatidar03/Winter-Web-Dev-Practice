@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
     <nav>
-        <a href="/">Home</a> |
-        <a href="/about">About Us</a> |
-        <a href="/contact">Contact Us</a>
+        <div class="container">
+            <a href="/" class="brand">Node App</a>
+            <div>
+                <a href="/">Home</a>
+                <a href="/users">Users</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
     </nav>
+    <div class="container text-center">
+        <h1>Welcome to the Home Page</h1>
+        <p>This is a simple Node.js application.</p>
+        <a href="/users" class="btn">View Users</a>
+    </div>
 </body>
 </html>

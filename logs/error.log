@@ -1,0 +1,21 @@
+[ERROR] {"timestamp":"2025-11-25T11:25:32.028Z","ip":"::1","method":"GET","url":"/api/users/65565","status":404,"size":"28","duration":"8ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T12:43:56.985Z","ip":"::1","method":"GET","url":"/api/users/65565","status":404,"size":"28","duration":"1ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T12:52:54.563Z","ip":"::1","method":"GET","url":"/api/users/5456464","status":404,"size":"28","duration":"19ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T12:53:01.000Z","ip":"::1","method":"GET","url":"/api/users/5456464","status":404,"size":"28","duration":"0ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T12:53:05.147Z","ip":"::1","method":"GET","url":"/api/users/5456464","status":404,"size":"28","duration":"1ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T12:53:07.587Z","ip":"::1","method":"GET","url":"/api/users/5456464","status":404,"size":"28","duration":"1ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T13:57:59.681Z","ip":"::1","method":"POST","url":"/api/auth/register","status":400,"size":"33","duration":"3ms","body":{"name":"Parth","email":"john.doe@mple.com","password":"12345"}}
+[ERROR] {"timestamp":"2025-11-25T13:58:13.832Z","ip":"::1","method":"POST","url":"/api/auth/login","status":400,"size":"60","duration":"2ms","body":{"email":"john.doe@example.com","password":"12345"}}
+[ERROR] {"timestamp":"2025-11-25T13:58:22.126Z","ip":"::1","method":"POST","url":"/api/auth/login","status":400,"size":"60","duration":"2ms","body":{"email":"john.doe@example.com","password":"12345"}}
+[ERROR] {"timestamp":"2025-11-25T14:00:43.907Z","ip":"::1","method":"POST","url":"/api/auth/register","status":400,"size":"33","duration":"1ms","body":{"name":"Solo Coder","email":"u1892911@gmail.com","password":"123"}}
+[ERROR] {"timestamp":"2025-11-25T14:00:49.674Z","ip":"::1","method":"POST","url":"/api/auth/register","status":400,"size":"33","duration":"1ms","body":{"name":"Solo Coderr","email":"u1892911@gmail.com","password":"123"}}
+[ERROR] {"timestamp":"2025-11-25T17:00:57.939Z","ip":"::1","method":"GET","url":"/.well-known/appspecific/com.chrome.devtools.json","status":404,"size":187,"duration":"2ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T17:01:04.924Z","ip":"::1","method":"GET","url":"/.well-known/appspecific/com.chrome.devtools.json","status":404,"size":187,"duration":"2ms","body":{}}
+[ERROR] {"timestamp":"2025-11-25T17:02:47.677Z","ip":"::1","method":"POST","url":"/api/auth/register","status":400,"size":"33","duration":"1ms","body":{"name":"Solo Coder","email":"parth11.patidar@gmail.com","password":"123"}}
+[ERROR] {"timestamp":"2025-11-25T17:02:53.194Z","ip":"::1","method":"POST","url":"/api/auth/register","status":400,"size":"33","duration":"1ms","body":{"name":"Solo Codercxvzvcxzx ","email":"parth11.patidar@gmail.com","password":"123"}}
+[ERROR] {"timestamp":"2025-11-25T17:08:42.830Z","ip":"::1","method":"GET","url":"/api/users","status":403,"size":"27","duration":"1ms","body":{}}
+[ERROR] Authentication Error: jwt expired
+[ERROR] {"timestamp":"2025-11-25T17:11:43.461Z","ip":"::1","method":"GET","url":"/api/users","status":403,"size":"27","duration":"7ms","body":{}}
+[ERROR] Authentication Error: invalid signature
+[ERROR] {"timestamp":"2025-11-26T04:49:55.404Z","ip":"::1","method":"GET","url":"/api/users","status":403,"size":"27","duration":"32ms","body":{}}
+[ERROR] {"timestamp":"2025-11-26T04:49:59.967Z","ip":"::1","method":"GET","url":"/api/users","status":401,"size":"46","duration":"2ms","body":{}}

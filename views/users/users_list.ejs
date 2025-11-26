@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users List</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <nav>
+        <div class="container">
+            <a href="/" class="brand">Node App</a>
+            <div>
+                <a href="/">Home</a>
+                <a href="/users">Users</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1><%= title %></h1>
+            <a href="/users/new" class="btn">Add New User</a>
+        </div>
+
+        <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user) { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td class="actions">
+                    <a href="/users/<%= user.id %>" class="btn btn-secondary" style="padding: 5px 10px; font-size: 0.9rem;">Details</a>
+                    <form
+                        action="/users/<%= user.id %>?_method=DELETE"
+                        method="POST"
+                        onsubmit="return confirm('Are you sure you want to delete this user?');"
+                        style="display: inline; padding: 0; box-shadow: none; margin: 0;"
+                    >
+                        <button type="submit" class="btn delete-btn">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+        </table>
+    </div>
+  </body>
+</html>

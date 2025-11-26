@@ -1,1 +1,1 @@
-GET http://localhost:3000/favicon.ico - 2025-11-24T04:59:25.017Z
+GET http://localhost:3000/api/users/2 - 2025-11-25T10:57:34.062Z

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="brand">Node App</a>
+            <div>
+                <a href="/">Home</a>
+                <a href="/users">Users</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center"><%= title %></h1>
+            <div class="mt-2 mb-2">
+                <p><strong>ID:</strong> <%= user.id %></p>
+                <p><strong>Name:</strong> <%= user.name %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+            </div>
+            <div class="text-center">
+                <a href="/users/<%= user.id %>/edit" class="btn">Edit User</a>
+                <a href="/users" class="btn btn-secondary" style="margin-left: 10px;">Back to List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

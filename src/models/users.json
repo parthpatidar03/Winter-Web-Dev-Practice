@@ -1,26 +1,56 @@
 [
   {
     "id": 1,
-    "name": "john",
+    "name": "Solo",
     "email": "john.doe@example.com",
-    "role": "admin"
+    "role": "patient"
   },
   {
     "id": 2,
-    "name": "jane",
-    "email": "jane.smith@example.com",
-    "role": "user"
+    "name": "Solo Coder",
+    "email": "u1892911@gmail.com",
+    "role": ""
   },
   {
     "id": 3,
-    "name": "alice",
-    "email": "alice.johnson@example.com",
-    "role": "user"
+    "name": "Parth",
+    "email": "u1892911@gmail.com",
+    "role": ""
   },
   {
     "id": 4,
-    "name": "bob",
-    "email": "bob.brown@example.com",
-    "role": "moderator"
+    "name": "NothingUser_1",
+    "email": "nothing@gmail.com",
+    "role": "Nothing"
+  },
+  {
+    "id": 5,
+    "name": "Parth",
+    "email": "john.doe@mple.com",
+    "password": "$2b$10$lwTPn3Ah76nNJToAPQVfuOiPneifgx1.j/m3BI7ymm8qK4UMi1HkG"
+  },
+  {
+    "id": 6,
+    "name": "Solo Coderr",
+    "email": "1892911@gmail.com",
+    "password": "$2b$10$nI/E2ZHzsh0AqR.YtD3puOqZpqmAsX/SEI319Fz2P13BvqOQj.3sK"
+  },
+  {
+    "id": 7,
+    "name": "Solo Coderrsrths",
+    "email": "parth11.patidarsdrgsers@GMAIL.COM",
+    "password": "$2b$10$rI3kYcmbYxaiu.S5s8ytu.MnBmKPWN/LRkuknYlnZoggNaSq3EW6i"
+  },
+  {
+    "id": 8,
+    "name": "Solo Coder",
+    "email": "alice.johnson@example.com",
+    "password": "$2b$10$3c272.Jw44S5HdeGIrTGOu3Qa9.kUZtKmsG.ACBquu4OFTxTj5pI6"
+  },
+  {
+    "id": 9,
+    "name": "Solo Codercxvzvcxzx ",
+    "email": "parth11.patidar@GMAIL.COM",
+    "password": "$2b$10$crbNyUILAqa1ia8JtF533uOMps1n9Hb77Ny4gwcdH8h.qvQzW8gDq"
   }
 ]
