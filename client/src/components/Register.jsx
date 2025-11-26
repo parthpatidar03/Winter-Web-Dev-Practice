@@ -19,8 +19,7 @@ export function Register() {
         password
       });
       
-      // Save token and user info
-      localStorage.setItem('token', response.data.token);
+      // Save user info (Token is now in Cookie)
       localStorage.setItem('user', JSON.stringify(response.data.user));
       
       // Redirect to home

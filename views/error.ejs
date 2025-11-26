@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="brand">Node App</a>
+            <div>
+                <a href="/">Home</a>
+                <a href="/users">Users</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="text-align: center; margin-top: 50px;">
+        <h1 style="color: #e74c3c;">Oops! Something went wrong.</h1>
+        
+        <% if (locals.message) { %>
+            <p class="error-message" style="font-size: 1.2rem; margin: 20px 0;">
+                <%= message %>
+            </p>
+        <% } else { %>
+            <p>An unexpected error occurred.</p>
+        <% } %>
+
+        <% if (locals.error && locals.error.status) { %>
+            <p>Status Code: <%= error.status %></p>
+        <% } %>
+
+        <% if (locals.error && locals.error.stack && process.env.NODE_ENV === 'development') { %>
+            <pre style="text-align: left; background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+                <%= error.stack %>
+            </pre>
+        <% } %>
+
+        <a href="/" class="btn" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px;">Go Back Home</a>
+    </div>
+</body>
+</html>

@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import { createRequire } from 'module';
+import { request } from "http";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,7 +21,8 @@ const about = async (req, res) => {
 };
 
 const home = async (req, res) => {
-  res.render("home", { title: "Home Page" });
+  console.log(req.session);
+  res.render("home", { title: "Home Page", user: req.session.user });
 };
 
 const contact = async (req, res) => {
@@ -30,6 +32,8 @@ const contact = async (req, res) => {
 const home1 = async (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "root.html"));
 };
+
+
 
 
 export { index, about, home, contact, home1 };

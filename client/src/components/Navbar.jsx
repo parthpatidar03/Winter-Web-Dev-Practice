@@ -8,23 +8,23 @@ export function Navbar() {
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
     
-    if (storedUser && token) {
+    if (storedUser) {
       setUser(JSON.parse(storedUser));
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {
       setUser(null);
-      delete axios.defaults.headers.common['Authorization'];
     }
   }, [location]); // Re-check on route change
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    delete axios.defaults.headers.common['Authorization'];
-    setUser(null);
-    setLocation('/login');
+  const handleLogout = async () => {
+    try {
+      await axios.post('http://localhost:3000/api/auth/logout');
+      localStorage.removeItem('user');
+      setUser(null);
+      setLocation('/login');
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
   };
 
   return (

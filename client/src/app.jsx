@@ -8,6 +8,10 @@ import { Login } from './components/Login'
 import { Register } from './components/Register'
 import { Navbar } from './components/Navbar'
 import './app.css'
+import axios from 'axios'; 
+
+// Configure Axios to always send cookies
+axios.defaults.withCredentials = true; // tells the browser "Please send cookies to the server."
 
 export function App() {
   return (

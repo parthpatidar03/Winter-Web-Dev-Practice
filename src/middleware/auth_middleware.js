@@ -2,8 +2,7 @@ import jwt from 'jsonwebtoken';
 import {logError} from '../utility/file_logger.js';
 
 const authenticateToken = (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+    const token = req.cookies.token; // Read from Cookie
 
     if (!token) {
         return res.status(401).json({ message: "Access Denied: No Token Provided" });

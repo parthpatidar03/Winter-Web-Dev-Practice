@@ -32,9 +32,16 @@ const register = async (req, res) => {
             { expiresIn: '1h' }
         );
 
+        // Send Token in HttpOnly Cookie
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Use secure in production
+            sameSite: 'strict',
+            maxAge: 3600000 // 1 hour
+        });
+
         res.status(201).json({
             message: "User registered successfully",
-            token,
             user: { id: newUser.id, name: newUser.name, email: newUser.email }
         });
 
@@ -74,9 +81,16 @@ const login = async (req, res) => {
 
         logInfo(`User Login Success: ${user.email} (ID: ${user.id})`);
 
+        // Send Token in HttpOnly Cookie
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            maxAge: 3600000 // 1 hour
+        });
+
         res.status(200).json({
             message: "Login successful",
-            token,
             user: { id: user.id, name: user.name, email: user.email }
         });
 
@@ -86,4 +100,13 @@ const login = async (req, res) => {
     }
 };
 
-export { register, login };
+const logout = (req, res) => {
+    res.clearCookie('token', {
+        httpOnly: true, 
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict'
+    });
+    res.status(200).json({ message: "Logout successful" });
+}
+
+export { register, login , logout , };
